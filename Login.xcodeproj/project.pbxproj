@@ -12,6 +12,9 @@
 		654313C2231FBFB500FAA438 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 654313C0231FBFB500FAA438 /* Main.storyboard */; };
 		654313C4231FBFB900FAA438 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 654313C3231FBFB900FAA438 /* Assets.xcassets */; };
 		654313C7231FBFB900FAA438 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 654313C5231FBFB900FAA438 /* LaunchScreen.storyboard */; };
+		654844CB2321EBC80093A1EC /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654844CA2321EBC80093A1EC /* Information.swift */; };
+		654844CD2322F7730093A1EC /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654844CC2322F7730093A1EC /* InfoTableViewController.swift */; };
+		654844CF232313820093A1EC /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654844CE232313820093A1EC /* InfoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		654313C3231FBFB900FAA438 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		654313C6231FBFB900FAA438 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		654313C8231FBFB900FAA438 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		654844CA2321EBC80093A1EC /* Information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Information.swift; sourceTree = "<group>"; };
+		654844CC2322F7730093A1EC /* InfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewController.swift; sourceTree = "<group>"; };
+		654844CE232313820093A1EC /* InfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +62,10 @@
 			children = (
 				654313BC231FBFB500FAA438 /* AppDelegate.swift */,
 				654313BE231FBFB500FAA438 /* ViewController.swift */,
+				654844CA2321EBC80093A1EC /* Information.swift */,
 				654313C0231FBFB500FAA438 /* Main.storyboard */,
+				654844CC2322F7730093A1EC /* InfoTableViewController.swift */,
+				654844CE232313820093A1EC /* InfoTableViewCell.swift */,
 				654313C3231FBFB900FAA438 /* Assets.xcassets */,
 				654313C5231FBFB900FAA438 /* LaunchScreen.storyboard */,
 				654313C8231FBFB900FAA438 /* Info.plist */,
@@ -135,8 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				654844CB2321EBC80093A1EC /* Information.swift in Sources */,
+				654844CF232313820093A1EC /* InfoTableViewCell.swift in Sources */,
 				654313BF231FBFB500FAA438 /* ViewController.swift in Sources */,
 				654313BD231FBFB500FAA438 /* AppDelegate.swift in Sources */,
+				654844CD2322F7730093A1EC /* InfoTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +295,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y8VL32NSSA;
 				INFOPLIST_FILE = Login/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -300,6 +313,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y8VL32NSSA;
 				INFOPLIST_FILE = Login/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
