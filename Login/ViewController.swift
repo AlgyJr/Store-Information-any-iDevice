@@ -34,14 +34,12 @@ class ViewController: UIViewController {
             shakeError(field: txtName)
         }
         if isValid(test: txtEmail.text, expression: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9-]+\\.[A-Za-z]{2,4}") {
-            print("Valid email")
             setupTextField(field: txtEmail)
             email = txtEmail.text!
         } else {
             shakeError(field: txtEmail)
         }
         if isValid(test: txtNr.text, expression: "\\+[0-9]{2,3}+-?[0-9]{9}") {
-            print("Valid phone number")
             setupTextField(field: txtNr)
             number = txtNr.text!
         } else {
@@ -49,14 +47,12 @@ class ViewController: UIViewController {
         }
         
         if let info = Information(name: name, email: email, number: number) {
-            print("Criou objecto")
             infos += [info]
             txtName.text = ""
             txtEmail.text = ""
             txtNr.text = "+258-"
             //save data
             info.settingData(infos: infos)
-            print("Conseguiu guardar")
         }
     }
     
@@ -80,11 +76,8 @@ class ViewController: UIViewController {
         //Load
         var reference = Information(name: "Unknown", email: "unknown@g.com", number: "+258-000000000")
         if let savedInfo = reference!.getSavedInfo() {
-            print("Carregado")
             infos = savedInfo
             print(infos[0].name)
-        } else {
-            print("Não entrou")
         }
     }
     

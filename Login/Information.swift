@@ -32,7 +32,6 @@ class Information : NSObject, NSCoding {
     //MARK: Setting Data
     func settingData(infos: [Information]) {
         let encodedData = NSKeyedArchiver.archivedData(withRootObject: infos)
-        print("Inicializado")
         UserDefaults.standard.set(encodedData, forKey: PropertyKey.savedObject)
     }
     
@@ -51,13 +50,11 @@ class Information : NSObject, NSCoding {
     init?(name: String, email: String, number: String) {
         //O nome não pode estar vazio
         guard !name.isEmpty else {
-            print("Error name")
             return nil
         }
         
         //O email deve contêr nome da servidora, @, ., extensão final
         guard isValid(test: email, expression: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9-]+\\.[A-Za-z]{2,4}") else {
-            print("Error Email")
             return nil
         }
         

@@ -15,7 +15,6 @@ class InfoTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewDidLoad()")
         //Load the sample data
 //        if let savedInfo = reference!.getSavedInfo() {
 //            print("Carregado")
@@ -37,13 +36,11 @@ class InfoTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("Adding identifier")
         let cellIndentifier = "InfoTableViewCell"
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIndentifier, for: indexPath) as? InfoTableViewCell else {
             fatalError("The dequeued Cell is not an instance of InfoTableViewCell")
         }
-        print("Adding Rows")
         
         let info = infos[indexPath.row]
         
@@ -51,21 +48,7 @@ class InfoTableViewController: UITableViewController {
         cell.lblName.text = info.name
         cell.lblEmail.text = info.email
         cell.lblNr.text = info.number
-        print("Added Rows")
         return cell
-    }
-    
-    //MARK: Private Methods
-    private func loadSampleInfos() {
-        print("Criação")
-//        guard let info1 = Information(name: "Algy", email: "algymussa@icloud.com", number: "+258-849022333") else {
-//            fatalError("Incapaz de instanciar a informação")
-//        }
-//        guard let info2 = Information(name: "Victoria", email: "victoriabila.009@gmail.com", number: "+258-828719070") else {
-//            fatalError("Incapaz de instanciar a informação")
-//        }
-//        infos += [info1, info2]
-        print("Armazenado")
     }
 
     /*
