@@ -30,13 +30,13 @@ class Information : NSObject, NSCoding {
     }
     
     //MARK: Setting Data
-    func settingData(infos: [Information]) {
+    static func settingData(infos: [Information]) {
         let encodedData = NSKeyedArchiver.archivedData(withRootObject: infos)
         UserDefaults.standard.set(encodedData, forKey: PropertyKey.savedObject)
     }
     
     //Get
-    func getSavedInfo() -> [Information]? {
+    static func getSavedInfo() -> [Information]? {
         if let decodedArray = NSKeyedUnarchiver.unarchiveObject(with: UserDefaults.standard.object(forKey: PropertyKey.savedObject) as! Data) as! [Information]? {
             print(decodedArray[0].name)
             return decodedArray

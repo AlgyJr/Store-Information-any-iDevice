@@ -52,7 +52,7 @@ class ViewController: UIViewController {
             txtEmail.text = ""
             txtNr.text = "+258-"
             //save data
-            info.settingData(infos: infos)
+            Information.settingData(infos: infos)
         }
     }
     
@@ -73,9 +73,7 @@ class ViewController: UIViewController {
         txtNr.text = "+258-"
         setupButton(button: butList, backGroundColor: UIColor.black, titleColor: UIColor.white)
         setupButton(button: butRegistar, backGroundColor: UIColor.white, titleColor: UIColor.black)
-        //Load
-        var reference = Information(name: "Unknown", email: "unknown@g.com", number: "+258-000000000")
-        if let savedInfo = reference!.getSavedInfo() {
+        if let savedInfo = Information.getSavedInfo() {
             infos = savedInfo
             print(infos[0].name)
         }
