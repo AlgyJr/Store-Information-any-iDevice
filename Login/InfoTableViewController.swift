@@ -15,14 +15,11 @@ class InfoTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Load the sample data
-//        if let savedInfo = reference!.getSavedInfo() {
-//            print("Carregado")
-//            infos = savedInfo
-//        } else {
-//            print("Não carregou")
-//            loadSampleInfos()
-//        }
+//        Load the sample data
+        if let savedInfo = Information.getSavedInfo() {
+            print("Carregado")
+            infos = savedInfo
+        }
     }
 
     // MARK: - Table view data source

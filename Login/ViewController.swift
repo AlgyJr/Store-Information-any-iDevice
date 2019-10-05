@@ -9,7 +9,7 @@
 import UIKit
 import os.log
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     //MARK: Variables declaration
     var infos = [Information]()
     
@@ -77,6 +77,10 @@ class ViewController: UIViewController {
             infos = savedInfo
             print(infos[0].name)
         }
+        
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+//         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+//         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
     }
     
     //MARK: Functions
@@ -128,5 +132,9 @@ class ViewController: UIViewController {
     func isValid(test: String?, expression: String)-> Bool {
         let regex = try! NSRegularExpression(pattern: expression, options: .caseInsensitive)
         return regex.firstMatch(in: test!, options: [], range: NSRange(location: 0, length: test!.count)) != nil
+    }
+    
+    @objc func keyboardWillChange(notification: Notification) {
+        
     }
 }

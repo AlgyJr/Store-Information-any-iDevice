@@ -31,15 +31,19 @@ class Information : NSObject, NSCoding {
     
     //MARK: Setting Data
     static func settingData(infos: [Information]) {
-        let encodedData = NSKeyedArchiver.archivedData(withRootObject: infos)
+        let encodedData = try? NSKeyedArchiver.archivedData(withRootObject: infos, requiringSecureCoding: false)
         UserDefaults.standard.set(encodedData, forKey: PropertyKey.savedObject)
     }
     
     //Get
     static func getSavedInfo() -> [Information]? {
-        if let decodedArray = NSKeyedUnarchiver.unarchiveObject(with: UserDefaults.standard.object(forKey: PropertyKey.savedObject) as! Data) as! [Information]? {
-            print(decodedArray[0].name)
-            return decodedArray
+//        decodedArray = NSKeyedUnarchiver.unarchiveObject(with: UserDefaults.standard.object(forKey: PropertyKey.savedObject) as! Data) as! [Information]?
+        var data = UserDefaults.standard.object(forKey: PropertyKey.savedObject)
+        if data != nil {
+            if let decodedArray = NSKeyedUnarchiver.unarchiveObject(with: (data) as! Data) as! [Information]? {
+                print(decodedArray[0].name)
+                return decodedArray
+            }
         }
         print("Nil")
         return nil
